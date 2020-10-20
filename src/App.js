@@ -14,12 +14,12 @@ const App = () => {
 .then(data => {
   setAuthors(data)
 })}
-console.log('this is authors in app:', authors)
-
+// console.log('this is authors in app:', authors)
+useEffect(() => getAuthors(), []);
 //for form
 const emptyAuthor = {
-  firstName: "",
-  lastName: "",
+  firstName: "first name",
+  lastName: "last name",
   cookbooks: []
 }
 
@@ -48,7 +48,7 @@ const handleUpdate = author => {
       "Content-Type":"application/json"
     },
     body:JSON.stringify(author)
-  }).then((Res) =>{
+  }).then((res) =>{
     getAuthors()
   })
 }
@@ -59,6 +59,7 @@ const selectAuth = author => {
 }
 
 //this will delete the author
+//assuming this will work
 const deleteAuthor = author => {
   fetch(url+'/api/authors/'+author._id, {
     method: "delete"
@@ -67,7 +68,7 @@ const deleteAuthor = author => {
   })
 }
 
-useEffect(()=>getAuthors(), [])
+
 
   return (
 		<div className='App'>

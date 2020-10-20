@@ -11,7 +11,8 @@ const Form = (props) => {
 		e.preDefault();
 		props.handleSubmit(formData);
 		props.history.push('/');
-	};
+    };
+    
 //this was working and stopped when I configured delete
     //handles change and sets form data to these
 	const handleChange = (e) => {

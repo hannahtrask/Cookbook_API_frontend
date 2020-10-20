@@ -15,7 +15,7 @@ const App = () => {
   setAuthors(data)
 })}
 // console.log('this is authors in app:', authors)
-useEffect(() => getAuthors(), []);
+useEffect(()=>getAuthors(), [])
 //for form
 const emptyAuthor = {
   firstName: "first name",
@@ -93,7 +93,7 @@ const deleteAuthor = author => {
 					/>
 					<Route
 						exact
-						path='/addnew'
+						path='/edit'
 						render={(rp) => (
 							<Form
 								{...rp}
@@ -105,7 +105,7 @@ const deleteAuthor = author => {
 					/>
 					<Route
 						exact
-						path='/update'
+						path='/edit'
 						render={(rp) => (
 							<Form
 								{...rp}
